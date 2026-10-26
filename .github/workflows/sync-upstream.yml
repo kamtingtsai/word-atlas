@@ -1,0 +1,28 @@
+name: Sync upstream
+
+on:
+  schedule:
+    # 08:20 Asia/Singapore (UTC+8), every day.
+    - cron: "20 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-upstream-main
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'kamtingtsai/word-atlas'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Merge upstream into main without overwriting fork changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST "repos/$GITHUB_REPOSITORY/merge-upstream" \
+            -H "Accept: application/vnd.github+json" \
+            -f branch=main

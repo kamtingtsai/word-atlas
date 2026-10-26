@@ -45,8 +45,14 @@ The preparation script verifies asset counts and Cloudflare file-size limits.
 
 ## Synchronizing upstream
 
-The fork keeps its relationship to `designfuchen/word-atlas`. Use GitHub's
-**Sync fork** action or merge upstream locally:
+The fork keeps its relationship to `designfuchen/word-atlas`. The GitHub Actions
+workflow **Sync upstream** runs daily at **08:20 Asia/Singapore** (00:20 UTC).
+It uses GitHub's merge-upstream API without force-pushing, preserving local
+deployment changes. Conflicts fail the run and leave `main` unchanged. A
+successful update triggers Cloudflare's existing push-based deployment.
+
+Run it immediately from **Actions → Sync upstream → Run workflow**, use GitHub's
+**Sync fork** action, or merge upstream locally:
 
 ```sh
 git remote add upstream https://github.com/designfuchen/word-atlas.git
@@ -57,8 +63,9 @@ git push origin main
 
 Keep this fork's `cloudflare/`, `scripts/cloudflare/`, Wrangler configuration,
 and deployment npm scripts when resolving conflicts. A successful sync pushed
-to `main` triggers deployment automatically. Upstream synchronization itself
-is manual; no recurring sync job is enabled.
+to `main` triggers deployment automatically. GitHub scheduled workflows may
+start late under load and are disabled after 60 days without repository
+activity; re-enable this workflow from the Actions page if that happens.
 
 ## Rollback
 
