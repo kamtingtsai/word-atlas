@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "word-atlas",
+  "main": "cloudflare/worker.ts",
+  "compatibility_date": "2026-10-26",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {
+    "directory": "./.cloudflare/app",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/atlas/audio/*"]
+  },
+  "services": [
+    { "binding": "WORD_AUDIO", "service": "word-atlas-word-audio" },
+    { "binding": "EXAMPLE_AUDIO", "service": "word-atlas-example-audio" }
+  ],
+  "routes": [{ "pattern": "word.chiyy.com", "custom_domain": true }],
+  "observability": { "enabled": true }
+}

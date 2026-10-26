@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "word-atlas-example-audio",
+  "compatibility_date": "2026-10-26",
+  "workers_dev": false,
+  "assets": {
+    "directory": "../.cloudflare/example-audio",
+    "html_handling": "none",
+    "not_found_handling": "none"
+  }
+}
