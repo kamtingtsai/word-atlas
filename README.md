@@ -118,6 +118,8 @@ npm run build        # 构建到 dist/
 
 子路径部署：`ATLAS_BASE=/words/ npm run build`。完整说明见 [部署文档](docs/deployment.md)。
 
+本 fork 的在线站点：[word.chiyy.com](https://word.chiyy.com)。`main` 分支通过 Cloudflare Workers Builds 自动部署，完整媒体与上游署名均保留，详见 [Cloudflare 部署与上游同步](docs/cloudflare.md)。
+
 **技术栈**：React 19 · TypeScript · Vite · ts-fsrs · WebGL2
 
 ## 开放数据
