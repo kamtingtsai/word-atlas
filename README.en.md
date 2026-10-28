@@ -14,6 +14,12 @@
 [![Dataset: CC BY 4.0](https://img.shields.io/badge/Dataset-CC_BY_4.0-AD5038?style=flat-square)](CONTENT_LICENSE.md)
 [![Follow on X](https://img.shields.io/badge/X-@yangleiocx3-17283B?style=flat-square&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 
+<br>
+
+<a href="https://0xlei.tech/words/"><img src="https://0xlei.tech/words/beta/banner.png" alt="Word Atlas iOS beta — scan with WeChat to join the beta group" width="100%"></a>
+
+**The Word Atlas iOS app is in development.** Scan the code with WeChat to join the beta group. If the code has expired, open the [website](https://0xlei.tech/words/) and tap 「内测」 in the top bar to add the author on WeChat.
+
 </div>
 
 ---
